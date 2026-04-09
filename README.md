@@ -1,6 +1,5 @@
 # OSDL_PROJECT
 
-### README (copy/paste)
 
 ## Hotel Management System (JavaFX + SQLite)
 
