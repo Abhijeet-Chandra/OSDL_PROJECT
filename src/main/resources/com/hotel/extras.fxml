@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.hotel.controller.ExtrasController">
+    <padding>
+        <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+    </padding>
+    <top>
+        <VBox spacing="12.0">
+            <Label styleClass="page-title" text="Extra services"/>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+                <Button onAction="#onRefresh" text="Refresh"/>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="table" prefHeight="420.0">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="60.0" text="ID"/>
+                <TableColumn fx:id="colName" prefWidth="220.0" text="Name"/>
+                <TableColumn fx:id="colCategory" prefWidth="120.0" text="Category"/>
+                <TableColumn fx:id="colPrice" prefWidth="120.0" text="Price"/>
+                <TableColumn fx:id="colActive" prefWidth="90.0" text="Active"/>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <VBox spacing="12.0">
+            <Separator/>
+            <Label styleClass="section-title" text="Add / edit service"/>
+            <GridPane hgap="10.0" vgap="10.0">
+                <Label text="Name" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="nameField" promptText="Service name" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <Label text="Category" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <ComboBox fx:id="categoryCombo" editable="false" prefWidth="200.0" GridPane.columnIndex="1"
+                          GridPane.rowIndex="1"/>
+
+                <Label text="Price (₹)" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <TextField fx:id="priceField" promptText="e.g. 120.00" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <CheckBox fx:id="activeCheck" mnemonicParsing="false" selected="true" text="Active"
+                          GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            </GridPane>
+            <HBox spacing="10.0">
+                <Button onAction="#onAdd" text="Add"/>
+                <Button onAction="#onUpdate" text="Update selected"/>
+                <Button onAction="#onDelete" text="Delete selected"/>
+                <Button onAction="#onClearForm" text="Clear form"/>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>
+

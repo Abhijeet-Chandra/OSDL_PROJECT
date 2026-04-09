@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.hotel.controller.SignupController" styleClass="login-root">
+    <VBox alignment="CENTER" spacing="14.0" styleClass="login-card" maxWidth="380.0">
+        <padding>
+            <Insets top="24.0" right="24.0" bottom="24.0" left="24.0"/>
+        </padding>
+
+        <Label text="Create account" styleClass="page-title"/>
+        <Label text="Sign up as a guest to book rooms" styleClass="muted"/>
+
+        <VBox spacing="8.0" fillWidth="true">
+            <Label text="Full name"/>
+            <TextField fx:id="nameField" promptText="Your name"/>
+        </VBox>
+
+        <VBox spacing="8.0" fillWidth="true">
+            <Label text="Phone"/>
+            <TextField fx:id="phoneField" promptText="9000000000"/>
+        </VBox>
+
+        <VBox spacing="8.0" fillWidth="true">
+            <Label text="Username"/>
+            <TextField fx:id="usernameField" promptText="Choose a username"/>
+        </VBox>
+
+        <VBox spacing="8.0" fillWidth="true">
+            <Label text="Password"/>
+            <PasswordField fx:id="passwordField" promptText="Create a password"/>
+        </VBox>
+
+        <VBox spacing="8.0" fillWidth="true">
+            <Label text="Confirm password"/>
+            <PasswordField fx:id="confirmPasswordField" promptText="Re-enter password"/>
+        </VBox>
+
+        <HBox spacing="10.0">
+            <Button text="Create account" defaultButton="true" onAction="#onSignup"/>
+            <Button text="Back to login" onAction="#onBack"/>
+        </HBox>
+    </VBox>
+</StackPane>
+
